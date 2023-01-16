@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 19:41:55 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/15 19:09:37 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:56:49 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ namespace ft
 	//Might need to be bool
 	enum color {BLACK, RED};
 
-	//
 	struct RBTree_node_base
 	{
 		typedef RBTree_node_base*	Base_ptr;
