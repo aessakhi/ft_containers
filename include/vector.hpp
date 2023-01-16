@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:57:49 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/03 20:28:47 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/16 17:46:00 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -408,17 +408,16 @@ namespace ft
 			}
 			else
 			{
-				//Need to be redone
 				size_type length = this->size() + std::max(size(), count);
 				pointer tmp_start = this->_alloc.allocate(length);
 				pointer tmp_finish = tmp_start + this->size() + count;
 				pointer tmp_end_of_storage = tmp_start + length;
 
-				for (size_type i = 0; i < position; i++)
+				for (size_type i = 0; i < position; i++) //Cpy before the first element to be inserted
 					this->_alloc.construct(tmp_start + i, *(this->_start + i));
-				for (size_type j = 0; &(*first) != &(*last); first++, j++)
+				for (size_type j = 0; &(*first) != &(*last); first++, j++) //Cpy the [first, last) range
 					this->_alloc.construct(tmp_start + position + j, *first);
-				for (size_type k = 0; k < this->size() - position; k++)
+				for (size_type k = 0; k < this->size() - position; k++) //Cpy after
 					this->_alloc.construct(tmp_start + position + count + k, *(this->_start + (position + k)));
 				for (size_type l = 0; l < this->size(); l++)
 					this->_alloc.destroy(this->_start + l);

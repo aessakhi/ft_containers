@@ -6,12 +6,22 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 03:03:27 by aessakhi          #+#    #+#             */
-/*   Updated: 2022/12/27 13:19:47 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:50:31 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPE_TRAITS_HPP
 # define TYPE_TRAITS_HPP
+
+	/* In C, an integral type can declare:
+
+	- Integer values, signed or unsigned
+	- Boolean values, where 0 is equivalent to false and any nonzero number is equivalent to true
+	- Characters, which are automatically converted to an integer value by the compiler
+	- Members of an enumerated type, which are interpreted as an integer by the compiler
+	- Bit fields */
+
+	/* enable_if allow to enable or disable a candidate of overload resolution */
 
 namespace ft
 {
