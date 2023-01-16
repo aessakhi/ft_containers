@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:57:49 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/16 17:46:00 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/16 23:36:41 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -483,8 +483,9 @@ namespace ft
 
 		void pop_back()
 		{
-			--this->_finish;
-			this->_alloc.destroy(this->_finish);
+			if (this->size() == 0)
+				return ;
+			this->_alloc.destroy(--this->_finish);
 		};
 
 		//Resizes the container to contain count elements
