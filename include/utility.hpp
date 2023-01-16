@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 02:19:57 by aessakhi          #+#    #+#             */
-/*   Updated: 2022/12/26 02:58:33 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:21:15 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,6 @@ namespace ft
 		T tmp(a);
 		a = b;
 		b = tmp;
-	};
-
-	template <class T1, class T2>
-	void swap (pair<T1, T2>& x, pair<T1, T2>& y)
-	{
-		x.swap(y);
 	};
 
 	template <class T1, class T2>

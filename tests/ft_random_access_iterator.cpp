@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 20:23:21 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/16 20:24:28 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/16 20:40:42 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ int main()
 	for (int i = 0; i < 10; i++)
 		vector_test.push_back(i);
 
-	std::vector<int>::iterator start(vector_test.begin());
-	std::vector<int>::iterator finish(vector_test.end());
+	std::vector<int>::iterator init_start(vector_test.begin());
+	std::vector<int>::iterator init_finish(vector_test.end());
+
+	RandomAccessIterator<int> start(init_start.base());
+	RandomAccessIterator<int> finish(init_finish.base());
 
 	std::cout << "Test copy constructible" << std::endl;
 
 	std::cout << "Start should point to vector_test.begin(): " << *start << std::endl;
 
 	std::cout << "Test copy assignable" << std::endl;
-	std::vector<int>::iterator cpy_start = start;
+	RandomAccessIterator<int> cpy_start(start);
 	std::cout << "Cpy start should point to vector_test.begin(): " << *cpy_start << std::endl;
 
 	std::cout << "Test incrementation" << std::endl;
@@ -73,7 +76,7 @@ int main()
 	else
 		std::cerr << "Problem here" << std::endl;
 
-	cpy_start = vector_test.begin();
+	cpy_start = start;
 	std::cout << "Testing equality" << std::endl;
 	if (cpy_start == start)
 		std::cout << "Cpy start is equal to start" << std::endl;
