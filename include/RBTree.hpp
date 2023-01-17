@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 19:41:55 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/16 19:56:49 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/17 21:50:07 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -666,9 +666,9 @@ namespace ft
 
 		private:
 		
+			Compare			_key_compare;
 			node_allocator	_node_alloc;
 			RBTree_header	_start;
-			Compare			_key_compare;
 
 		//Need all the auxiliary functions so it's easier to navigate
 

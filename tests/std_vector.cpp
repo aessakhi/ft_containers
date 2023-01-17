@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:02:58 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/16 23:33:23 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:18:14 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #include <vector>
 
 using namespace std;
+
+class Awesome {
+
+public:
+Awesome( void ) : _n( 42 ) { return; }
+Awesome( int numbers ) : _n( numbers ) { return; }
+int get( void ) const { return this->_n; }
+
+private:
+int _n;};
+
+
+std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
 
 int main()
 {
@@ -250,6 +263,22 @@ int main()
 		std::cout << "first and second are equal" << std::endl;
 	else
 		std::cerr << "Problem here" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "Testing vector<Awesome>" << std::endl;
+
+	vector<Awesome> vector_awesome;
+	vector_awesome.push_back(Awesome(12));
+	vector_awesome.push_back(Awesome(16));
+	vector_awesome.push_back(Awesome(1));
+	vector_awesome.push_back(Awesome(5));
+	vector_awesome.push_back(Awesome(6));
+	vector_awesome.push_back(Awesome(8));
+	std::cout << std::endl;
+	std::cout << "The contents of vector_awesome should be 4 ints with a value of 100:";
+	for (vector<Awesome>::iterator it = vector_awesome.begin(); it != vector_awesome.end(); ++it)
+		std::cout << ' ' << *it;
+	std::cout << std::endl;
 
 	return (0);
 }

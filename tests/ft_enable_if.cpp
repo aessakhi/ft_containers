@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:20:06 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/16 19:21:23 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/17 22:04:01 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ using namespace ft;
 
 // 1. the return type (bool) is only valid if T is an integral type:
 template <class T>
-typename enable_if<std::is_integral<T>::value,bool>::type
+typename enable_if<is_integral<T>::value,bool>::type
   is_odd (T i) {return bool(i%2);}
 
 // 2. the second template argument is only valid if T is an integral type:
 template < class T,
-           class = typename enable_if<std::is_integral<T>::value>::type>
+           class = typename enable_if<is_integral<T>::value>::type>
 bool is_even (T i) {return !bool(i%2);}
 
 int main() {

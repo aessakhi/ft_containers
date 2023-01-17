@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 19:07:54 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/03 19:24:02 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/17 14:29:27 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,12 @@ namespace ft
 
 	template<class Iterator1, class Iterator2>
 	typename reverse_iterator<Iterator1>::difference_type operator-(const reverse_iterator<Iterator1>& lhs, const reverse_iterator<Iterator2>& rhs)
+	{
+		return (rhs.base() - lhs.base());
+	};
+
+	template<class Iterator>
+	typename reverse_iterator<Iterator>::difference_type operator-(const reverse_iterator<Iterator>& lhs, const reverse_iterator<Iterator>& rhs)
 	{
 		return (rhs.base() - lhs.base());
 	};

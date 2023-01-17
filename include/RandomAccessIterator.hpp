@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:51:54 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/03 19:49:09 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/17 14:26:08 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,13 @@ RandomAccessIterator<T> operator+(typename RandomAccessIterator<T>::difference_t
 };
 
 template <class T1, class T2>
-typename RandomAccessIterator<T1>::difference_type operator- (const RandomAccessIterator<T1>& lhs, const RandomAccessIterator<T2>& rhs)
+typename RandomAccessIterator<T1>::difference_type operator-(const RandomAccessIterator<T1>& lhs, const RandomAccessIterator<T2>& rhs)
+{
+	return (lhs.base() - rhs.base());
+};
+
+template <class T>
+typename RandomAccessIterator<T>::difference_type operator-(const RandomAccessIterator<T>& lhs, const RandomAccessIterator<T>& rhs)
 {
 	return (lhs.base() - rhs.base());
 };
