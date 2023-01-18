@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 19:11:43 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/15 19:35:38 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:25:27 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ namespace ft
 
 			typedef RBTree<key_type, value_type, std::_Identity<value_type>, key_compare, allocator_type>	tree;
 
-			typedef typename tree::pointer					pointer;
-			typedef typename tree::const_pointer			const_pointer;
-			typedef typename tree::iterator					iterator;
-			typedef typename tree::const_iterator			const_iterator;
-			typedef typename tree::reverse_iterator			reverse_iterator;
-			typedef typename tree::const_reverse_iterator	const_reverse_iterator;
-			typedef typename tree::size_type				size_type;
-			typedef typename tree::difference_type			difference_type;
+			typedef typename tree::pointer							pointer;
+			typedef typename tree::const_pointer					const_pointer;
+			typedef typename tree::const_iterator					iterator;
+			typedef typename tree::const_iterator					const_iterator;
+			typedef typename ft::reverse_iterator<iterator>			reverse_iterator;
+			typedef typename ft::reverse_iterator<const_iterator>	const_reverse_iterator;
+			typedef typename tree::size_type						size_type;
+			typedef typename tree::difference_type					difference_type;
 
 			explicit set(const key_compare& comp = key_compare(), const allocator_type& alloc = allocator_type()): _rbtree(comp, alloc){};
 

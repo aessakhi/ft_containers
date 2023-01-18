@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 22:02:58 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/17 19:19:09 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:00:18 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,7 +275,7 @@ int main()
 	vector_awesome.push_back(Awesome(6));
 	vector_awesome.push_back(Awesome(8));
 	std::cout << std::endl;
-	std::cout << "The contents of vector_awesome should be 4 ints with a value of 100:";
+	std::cout << "The contents of vector_awesome is:";
 	for (vector<Awesome>::iterator it = vector_awesome.begin(); it != vector_awesome.end(); ++it)
 		std::cout << ' ' << *it;
 	std::cout << std::endl;

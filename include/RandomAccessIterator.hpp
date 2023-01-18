@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 17:51:54 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/17 14:26:08 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:35:45 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ namespace ft
 		typedef T									value_type;
 		typedef T*									pointer;
 		typedef T&									reference;
-		typedef ft::random_access_iterator_tag		iterator_category;
+		typedef std::random_access_iterator_tag		iterator_category;
 		
 		RandomAccessIterator(): _ptr(0){};
 

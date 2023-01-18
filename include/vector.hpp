@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:57:49 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/16 23:36:41 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:36:14 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ namespace ft
 		vector(InputIt first, InputIt last, const Allocator& alloc = Allocator(),
 		typename ft::enable_if<!ft::is_integral<InputIt>::value>::type* = 0): _alloc(alloc)
 		{
-			size_type count = last - first;
+			size_type count = std::distance(first, last);
 			this->_start = this->_alloc.allocate(count);
 			this->_finish = this->_start;
 			while (&(*first) != &(*last))
@@ -150,7 +150,7 @@ namespace ft
 		void assign(InputIt first, InputIt last,
 		typename ft::enable_if<!ft::is_integral<InputIt>::value>::type* = 0)
 		{
-			size_type count = last - first;
+			size_type count = std::distance(first, last);
 			if (count > this->max_size())
 				throw std::length_error("ft::vector::assign: Length error");
 			this->clear();
@@ -388,7 +388,7 @@ namespace ft
 		void insert(iterator pos, InputIt first, InputIt last,
 		typename ft::enable_if<!ft::is_integral<InputIt>::value>::type* = 0)
 		{
-			size_type count = last - first;
+			size_type count = std::distance(first, last);
 			if (count == 0)
 				return ;
 			if (count > this->max_size())
@@ -448,7 +448,7 @@ namespace ft
 		//Need to check the difference between the two iterators
 		iterator erase(iterator first, iterator last)
 		{
-			size_type count = last - first;
+			size_type count = std::distance(first, last);
 			if (count > this->max_size())
 				throw std::length_error("ft::vector::erase: length error");
 			if (first != last)

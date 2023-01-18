@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 19:41:55 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/17 21:50:07 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 14:12:26 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -870,55 +870,55 @@ namespace ft
 							_start._header._right = new_node;
 				}
 				// Fix / Rebalance
-				while (new_node != tmp_root && new_node->_parent->_color == RED)
+				while (new_node != tmp_root && new_node->_parent->_color == RED) //Do the following until the parent of new_node is REd
 				{
 						RBTree_node_base *const grandpa = new_node->_parent->_parent;
-						if (new_node->_parent == grandpa->_left)
+						if (new_node->_parent == grandpa->_left) //If parent is the left child of grandpa of new_node
 						{
 							RBTree_node_base *const y = grandpa->_right;
-							if (y && y->_color == RED)
+							if (y && y->_color == RED) //Case 1: If the color of the right of grandpa is RED, set the color of both the children of grandpa as BLACK and the color of grandpa as RED
 							{
 								new_node->_parent->_color = BLACK;
 								y->_color = BLACK;
 								grandpa->_color = RED;
-								new_node = grandpa;
+								new_node = grandpa; //Assign grandpa to new_node
 							}
 							else
 							{
-								if (new_node == new_node->_parent->_right)
+								if (new_node == new_node->_parent->_right) //If new_node is the right child of parent
 								{
-									new_node = new_node->_parent;
-									RBTree_rotate_left(new_node, tmp_root);
+									new_node = new_node->_parent; //Assign parent to new_node
+									RBTree_rotate_left(new_node, tmp_root); //Left rotate new_node
 								}
-								new_node->_parent->_color = BLACK;
-								grandpa->_color = RED;
-								RBTree_rotate_right(grandpa, tmp_root);
+								new_node->_parent->_color = BLACK; //Set color of parent as black
+								grandpa->_color = RED; //Set color of grandpa as RED
+								RBTree_rotate_right(grandpa, tmp_root); //Right rotate grandpa
 							}
 						}
-						else
+						else //Else do the following
 						{
 							RBTree_node_base *const y = grandpa->_left;
-							if (y && y->_color == RED)
+							if (y && y->_color == RED) //If the color of the left child of the grandparent of new_node is RED, set the color of both the children of grandpa as BLACK and the color of grandpa as RED
 							{
 								new_node->_parent->_color = BLACK;
 								y->_color = BLACK;
 								grandpa->_color = RED;
-								new_node = grandpa;
+								new_node = grandpa; //Assign grandpa to new_node
 							}
 							else
 							{
-								if (new_node == new_node->_parent->_left)
+								if (new_node == new_node->_parent->_left) //Else if new_node is the left child of parent
 								{
-									new_node = new_node->_parent;
-									RBTree_rotate_right(new_node, tmp_root);
+									new_node = new_node->_parent; //Assign parent to new_node
+									RBTree_rotate_right(new_node, tmp_root); //Right rotate new_node
 								}
-								new_node->_parent->_color = BLACK;
-								grandpa->_color = RED;
-								RBTree_rotate_left(grandpa, tmp_root);
+								new_node->_parent->_color = BLACK; //Set color of parent as BLACK
+								grandpa->_color = RED; //Set color of grandpa as RED
+								RBTree_rotate_left(grandpa, tmp_root); //Left rotate grandpa
 							}
 						}
 				}
-				tmp_root->_color = BLACK;
+				tmp_root->_color = BLACK; //Set the root of the tree as BLACK
 			};
 
 			void erase_aux(const_iterator position)
