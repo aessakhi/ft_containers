@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:57:49 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/18 18:36:14 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:47:38 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,7 +248,17 @@ namespace ft
 			return (this->end());
 		};
 
+		const_reverse_iterator rbegin() const
+		{
+			return (this->end());
+		};
+
 		reverse_iterator rend()
+		{
+			return (this->begin());
+		};
+
+		const_reverse_iterator rend()
 		{
 			return (this->begin());
 		};
@@ -399,11 +409,10 @@ namespace ft
 				for (size_type i = 0; i < this->size() - position; i++)
 					this->_alloc.construct(this->_finish - i + (count - 1), *(this->_finish - i - 1));
 				this->_finish += count;
-				while (count)
+				for (size_type i = 0; i < count; i++)
 				{
-					last--;
-					this->_alloc.construct(this->_start + position + (count - 1), *last);
-					count--;
+					this->_alloc.construct(this->_start + position + (i), *first);
+					first++;
 				}
 			}
 			else

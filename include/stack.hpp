@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:58:54 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/15 20:20:39 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:38:57 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ namespace ft
 			return (this->c.back());
 		};
 
-		const reference top() const
+		const_reference top() const
 		{
 			return (this->c.back());
 		};

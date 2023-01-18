@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 19:41:55 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/18 14:12:26 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:41:17 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ namespace ft
 		typedef T&	reference;
 		typedef T*	pointer;
 
-		typedef ft::bidirectional_iterator_tag	iterator_category;
+		typedef std::bidirectional_iterator_tag	iterator_category;
 		typedef std::ptrdiff_t					difference_type;
 
 		typedef RBTree_iterator<T>			Self;
@@ -211,7 +211,7 @@ namespace ft
 
 		typedef RBTree_iterator<T> iterator;
 
-		typedef ft::bidirectional_iterator_tag	iterator_category;
+		typedef std::bidirectional_iterator_tag	iterator_category;
 		typedef std::ptrdiff_t					difference_type;
 
 		typedef RBTree_const_iterator<T>			Self;
@@ -456,7 +456,7 @@ namespace ft
 
 			const_reverse_iterator rend() const
 			{
-				return (const_reverse_iterator(begin));
+				return (const_reverse_iterator(begin()));
 			};
 
 			bool empty() const
