@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:57:49 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/18 20:47:38 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:35:32 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -258,7 +258,7 @@ namespace ft
 			return (this->begin());
 		};
 
-		const_reverse_iterator rend()
+		const_reverse_iterator rend() const
 		{
 			return (this->begin());
 		};

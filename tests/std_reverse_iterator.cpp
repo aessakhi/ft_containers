@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:26:59 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/16 18:49:05 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 21:03:33 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,21 @@ int main()
 
 	reverse_iterator<vector_iterator> rev_iterator;
 
-	rev_iterator = test_vector.rbegin() + 3;
-	std::cout << "test_vector.rbegin() + 3 points to " << *rev_iterator << std::endl;
+	rev_iterator = rev_start + 3;
+	std::cout << "rev_start + 3 points to " << *rev_iterator << std::endl;
 
-	rev_iterator = test_vector.rbegin();
+	rev_iterator = rev_start;
 	rev_iterator += 3;
 	std::cout << "rev_iterator += 3 point to " << *rev_iterator << std::endl;
 
-	rev_iterator = test_vector.rend() - 3;
-	std::cout << "test_vector.rend() - 3 points to " << *rev_iterator << std::endl;
+	rev_iterator = rev_finish - 3;
+	std::cout << "rev_finish - 3 points to " << *rev_iterator << std::endl;
 
-	rev_iterator = test_vector.rend();
+	rev_iterator = rev_finish;
 	rev_iterator -= 3;
 	std::cout << "rev_iterator -= 3 point to " << *rev_iterator << std::endl;
 
-	rev_iterator = test_vector.rend();
+	rev_iterator = rev_finish;
 	std::cout << "rev_iterator[5] points to " << rev_iterator[5] << std::endl;
 
 	std::cout << "Test ->" << std::endl;

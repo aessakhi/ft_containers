@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:31:51 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/17 19:42:54 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 21:34:17 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int main()
 		map_test.insert(make_pair(i, 'a'));
 	std::cout << "Time to insert 5000000 pair: " << get_relative_ms(before) << " ms" << std::endl;
 
+	std::cout << "Size of map: " << map_test.size() << std::endl;
 	it = map_test.begin();
 	it_end = map_test.end();
 	gettimeofday(&before, NULL);

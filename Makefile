@@ -6,7 +6,7 @@
 #    By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/17 20:02:48 by aessakhi          #+#    #+#              #
-#    Updated: 2023/01/17 23:18:34 by aessakhi         ###   ########.fr        #
+#    Updated: 2023/01/18 21:26:50 by aessakhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -179,6 +179,6 @@ fclean:	clean
 		$(RM) ft_random_access_iterator std_random_access_iterator
 		$(RM) ft_reverse_iterator std_reverse_iterator
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean re fclean

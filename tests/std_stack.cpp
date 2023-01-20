@@ -6,7 +6,7 @@
 /*   By: aessakhi <aessakhi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 23:41:58 by aessakhi          #+#    #+#             */
-/*   Updated: 2023/01/17 15:27:20 by aessakhi         ###   ########.fr       */
+/*   Updated: 2023/01/18 20:53:53 by aessakhi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ int main()
 	std::cout << "first inferior to second? " << (first < second) << std::endl;
 	std::cout << "first superior or equal to second? " << (first >= second) << std::endl;
 	std::cout << "first inferior or equal to second? " << (first <= second) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "TEST WITH LIST (deque and vector done)" << std::endl;
 
 	stack<std::string, std::list<std::string> > stack_list;
 	stack_list.push("test");
